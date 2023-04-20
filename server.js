@@ -1,11 +1,8 @@
-const http = require("http")
-const port = 3000
+import app from "./src/app.js";
 
-const server = http.createServer((req,res) => {
-    res.writeHead(200,{'Content-Type':'text/plain'})
-    res.end('API Node')
-}) 
+const port = process.env.PORT || 3000;
 
-server.listen(port, () => {
-    console.log(`Servido rodando em "http://localhost:${port}"`)
+app.listen(port, () => {
+    console.log(`Servidor, http://localhost:${port}`)
 })
+
